@@ -1,0 +1,68 @@
+#: import utils kivy.utils
+
+<HomeScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                # Background Color: Blue
+                rgb: utils.get_color_from_hex("#e3a74d")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            canvas:
+                Color:
+                    # Background Color: Blue
+                    rgb: utils.get_color_from_hex("#e3a74d")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            rows:1
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, .1
+            Image:
+                source: "icons/lyre.png"
+            Image:
+                source: "icons/piano.png"
+            # put two icons here
+        GridLayout:
+            rows: 1
+            pos_hint: {"top": 0.9, "left": 1}
+            size_hint: 1, .2
+            Image:
+                source: "icons/chair.png"
+            Image:
+                source: "icons/foot.png"
+                width: 100
+                allow_stretch: True
+            Image:
+                source: "icons/drum.png"
+            # put 2nd row
+        Label:
+            # Streak Label
+            pos_hint: {"top": .7, "left": 1}
+            size_hint: 1, .1
+            text: "ANG GETSOME"
+            id: var
+        GridLayout:
+            #Banner Grid
+            col: 1
+            pos_hint: {"top": 0.6, "left": 1}
+            size_hint: 1, .4
+            # put 4th row
+        GridLayout:
+            rows: 1
+            pos_hint: {"top": 0.2, "left": 1}
+            size_hint: 1, .2
+            ImageButton:
+                source: "icons/8note.png"
+                on_release:
+                    print("Released add friend button")
+            ImageButton:
+                source: "icons/horn.png"
+                on_press:
+                    self.source= "icons/ahri.png"
+                on_release:
+                    self.source= "icons/horn.png"
+             # 3 Menu buttons
